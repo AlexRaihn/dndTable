@@ -20,6 +20,14 @@ const privatePages: RouteRecordRaw[] = [
           guest: false,
         },
       },
+      {
+        path: "settings",
+        name: "SettingsIndex",
+        component: () => import("@/views/Private/Settings/SettingsIndex.vue"),
+        meta: {
+          guest: false,
+        },
+      },
     ],
   },
 ];

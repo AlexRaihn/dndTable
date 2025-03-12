@@ -1,40 +1,23 @@
-<template>
-  <div>
-    <v-stage
-      ref="stage"
-      :config="{
-        width,
-        height,
-        draggable: true,
-      }"
-    >
-      <v-layer>
-        <v-group ref="group">
-          <v-rect
-            v-for="n in 100"
-            :config="{
-              x: 20 + n * 5,
-              y: 50 + n * 5,
-              width: 100,
-              height: 100,
-              fill: 'white',
-              shadowBlur: 10,
-            }"
-          />
-        </v-group>
-      </v-layer>
-    </v-stage>
-  </div>
-</template>
-
 <script setup lang="ts">
-const width = window.innerWidth;
-const height = window.innerHeight;
+import { renderPixiApp } from "@/components/Pixi/app";
+import { TilingSprite, Assets } from "pixi.js";
+
+const texture = await Assets.load("https://pixijs.com/assets/p2.jpeg");
+const tilingSprite = new TilingSprite({
+  texture,
+  width: window.innerWidth,
+  height: window.innerHeight,
+});
+
+renderPixiApp("pixiStage", {
+  resizeTo: window,
+  tilingSprite,
+});
 </script>
 
-<style>
-body {
-  margin: 0;
-  padding: 0;
-}
-</style>
+<template>
+  <div class="relative">
+    <div class="absolute -z-999"></div>
+    <div id="pixiStage" />
+  </div>
+</template>
