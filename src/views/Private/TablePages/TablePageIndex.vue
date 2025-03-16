@@ -5,7 +5,7 @@ import TablePageSettingsBody from "@/components/Private/TablePage/TablePageSetti
 
 <template>
   <RouterLink :to="{ name: 'SettingsIndex' }">Вперёд</RouterLink>
-  <div style="display: flex">
+  <div>
     <TablePageSettingsBody />
     <TablePageBody />
   </div>
