@@ -1,11 +1,16 @@
 <script setup lang="ts">
+import { onMounted } from "vue";
 import { renderPixiApp } from "./Pixi/tableApp";
 
-renderPixiApp("pixiStage");
+onMounted(() => {
+  renderPixiApp("pixiStage");
+});
 </script>
 
 <template>
-  <div class="w-full">
-    <div id="pixiStage" class="h-[100vh] w-[100vh]" />
+  <div>
+    <div class="flex flex-col">
+      <div id="pixiStage" class="h-full w-full" />
+    </div>
   </div>
 </template>

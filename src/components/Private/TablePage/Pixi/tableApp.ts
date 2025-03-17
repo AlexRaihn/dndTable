@@ -3,20 +3,19 @@ import { renderGrid } from "./components/grid";
 
 export async function renderPixiApp(id: string) {
   // Create a new application
-  const app = new Application();
-  const render = await document.getElementById(id);
-  console.log(render);
+  const render = document.getElementById(id);
   if (!render) return null;
   // Initialize the application
-  console.log("load");
+  const app = new Application();
+  console.log("lInitialize the applicationoad");
   await app.init({ resizeTo: render });
 
   const gridContainer = new Container();
   gridContainer.addChild(
     renderGrid({
       blockOptions: {
-        w: 39,
-        h: 39,
+        w: 34,
+        h: 34,
         borderW: 1,
       },
       xCol: 50,
