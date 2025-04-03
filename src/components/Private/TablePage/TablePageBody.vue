@@ -8,9 +8,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <div class="flex flex-col">
-      <div id="pixiStage" class="h-full w-full" />
-    </div>
+  <div class="p-1 pixiContainer">
+    <div id="pixiStage" class="w-full h-full" />
   </div>
 </template>
+
+<style scoped>
+.pixiContainer {
+  height: calc(100vh - 80px);
+}
+</style>

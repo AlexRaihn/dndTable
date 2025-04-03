@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import TablePageBody from "@/components/Private/TablePage/TablePageBody.vue";
 import TablePageSettingsBody from "@/components/Private/TablePage/TablePageSettingsBody.vue";
+import TablePageSideBar from "@/components/Private/TablePage/TablePageSideBar.vue";
 </script>
 
 <template>
@@ -12,18 +13,22 @@ import TablePageSettingsBody from "@/components/Private/TablePage/TablePageSetti
     <div class="tableBody">
       <TablePageBody />
     </div>
-    <div class="SideBar"></div>
+    <div class="SideBar">
+      <TablePageSideBar />
+    </div>
   </div>
 </template>
 
 <style scoped>
 .container {
+  height: 100vh;
+  width: 100%;
   display: grid;
-  grid-template-columns: 0.5fr 1.9fr 0.2fr;
-  grid-template-rows: 0.2fr 2fr 0.1fr;
-  gap: 0px 0px;
+  grid-template-columns: 0.5fr 2.2fr 0.1fr;
+  grid-template-rows: 0.2fr 1.4fr 1fr;
+  gap: 4px 4px;
   grid-template-areas:
-    "navbar navbar SideBar"
+    "navbar navbar navbar"
     "tableBody tableBody SideBar"
     "tableBody tableBody SideBar";
 }
